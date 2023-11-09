@@ -7,16 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0EEA182AC6BDBF00919AF8 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */; };
+		EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */; };
+		EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */; };
+		EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */; };
+		EB1364A92A28C3FB008A91B3 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */; };
+		EB1364AF2A29218A008A91B3 /* EyeTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */; };
+		EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B02A2932C9008A91B3 /* TabBarController.swift */; };
+		EB1364B32A2937C6008A91B3 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B22A2937C6008A91B3 /* StatisticsViewController.swift */; };
+		EB1364B52A29EEB1008A91B3 /* EyeExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */; };
+		EB1364B82A2A070D008A91B3 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B72A2A070D008A91B3 /* CustomARView.swift */; };
+		EB1364BA2A2A2E5D008A91B3 /* CheckEyeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */; };
+		EB1364BC2A2A3637008A91B3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364BB2A2A3637008A91B3 /* Coordinator.swift */; };
+		EB1364C02A2A3F2D008A91B3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364BF2A2A3F2D008A91B3 /* MainCoordinator.swift */; };
+		EB1364C72A2A42CF008A91B3 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364C62A2A42CF008A91B3 /* EnterViewController.swift */; };
+		EB1364C92A2A4869008A91B3 /* EnterViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364C82A2A4869008A91B3 /* EnterViewCoordinator.swift */; };
+		EB1364CB2A2A6F6D008A91B3 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CA2A2A6F6D008A91B3 /* TabBarCoordinator.swift */; };
+		EB1364CD2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */; };
+		EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */; };
+		EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */; };
+		EB147A182AC5B1A80089A7B2 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */; };
 		EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247129CA339F00539CFC /* AppDelegate.swift */; };
 		EB3A247429CA339F00539CFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247329CA339F00539CFC /* SceneDelegate.swift */; };
-		EB3A247629CA339F00539CFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247529CA339F00539CFC /* ViewController.swift */; };
-		EB3A247929CA339F00539CFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3A247729CA339F00539CFC /* Main.storyboard */; };
+		EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247529CA339F00539CFC /* EyeSightViewController.swift */; };
 		EB3A247C29CA339F00539CFC /* WatchUrEyes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247A29CA339F00539CFC /* WatchUrEyes.xcdatamodeld */; };
 		EB3A247E29CA33A100539CFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3A247D29CA33A100539CFC /* Assets.xcassets */; };
 		EB3A248129CA33A100539CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3A247F29CA33A100539CFC /* LaunchScreen.storyboard */; };
 		EB3A248C29CA33A200539CFC /* WatchUrEyesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A248B29CA33A200539CFC /* WatchUrEyesTests.swift */; };
 		EB3A249629CA33A200539CFC /* WatchUrEyesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A249529CA33A200539CFC /* WatchUrEyesUITests.swift */; };
 		EB3A249829CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A249729CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift */; };
+		EBB5887E2AFBBE41008E1987 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */; };
+		EBB588812AFC1F92008E1987 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EBB588802AFC1F92008E1987 /* SnapKit */; };
+		EBD1FB152AFD81E000CF6449 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */; };
+		EBD1FB172AFD86BB00CF6449 /* TableMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +60,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
+		EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
+		EB1364AB2A28F084008A91B3 /* gaze-tracker-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "gaze-tracker-master"; path = "../gaze-tracker-master"; sourceTree = "<group>"; };
+		EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestCoordinator.swift; sourceTree = "<group>"; };
+		EB1364B02A2932C9008A91B3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EB1364B22A2937C6008A91B3 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseViewController.swift; sourceTree = "<group>"; };
+		EB1364B72A2A070D008A91B3 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEyeController.swift; sourceTree = "<group>"; };
+		EB1364BB2A2A3637008A91B3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB1364BF2A2A3F2D008A91B3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EB1364C62A2A42CF008A91B3 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		EB1364C82A2A4869008A91B3 /* EnterViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewCoordinator.swift; sourceTree = "<group>"; };
+		EB1364CA2A2A6F6D008A91B3 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseCoordinator.swift; sourceTree = "<group>"; };
+		EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
+		EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEyeViewModel.swift; sourceTree = "<group>"; };
+		EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		EB3A246E29CA339F00539CFC /* WatchUrEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchUrEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3A247129CA339F00539CFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3A247329CA339F00539CFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB3A247529CA339F00539CFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EB3A247829CA339F00539CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB3A247529CA339F00539CFC /* EyeSightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeSightViewController.swift; sourceTree = "<group>"; };
 		EB3A247B29CA339F00539CFC /* WatchUrEyes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchUrEyes.xcdatamodel; sourceTree = "<group>"; };
 		EB3A247D29CA33A100539CFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3A248029CA33A100539CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +94,9 @@
 		EB3A249129CA33A200539CFC /* WatchUrEyesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchUrEyesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3A249529CA33A200539CFC /* WatchUrEyesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUrEyesUITests.swift; sourceTree = "<group>"; };
 		EB3A249729CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUrEyesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureProcessor.swift; sourceTree = "<group>"; };
+		EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB588812AFC1F92008E1987 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +125,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB1364AA2A28F084008A91B3 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364AB2A28F084008A91B3 /* gaze-tracker-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		EB1364AD2A29217B008A91B3 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364BB2A2A3637008A91B3 /* Coordinator.swift */,
+				EB1364BF2A2A3F2D008A91B3 /* MainCoordinator.swift */,
+				EB1364C82A2A4869008A91B3 /* EnterViewCoordinator.swift */,
+				EB1364CA2A2A6F6D008A91B3 /* TabBarCoordinator.swift */,
+				EB1364B02A2932C9008A91B3 /* TabBarController.swift */,
+				EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */,
+				EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */,
+				EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		EB1364B62A29FECD008A91B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB1364C12A2A4005008A91B3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364C52A2A403C008A91B3 /* Statistics */,
+				EB1364C42A2A4027008A91B3 /* Exercise */,
+				EB1364C32A2A4014008A91B3 /* Entering */,
+				EB1364C22A2A400B008A91B3 /* EyeTesting */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EB1364C22A2A400B008A91B3 /* EyeTesting */ = {
+			isa = PBXGroup;
+			children = (
+				EB3A247529CA339F00539CFC /* EyeSightViewController.swift */,
+				EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */,
+				EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */,
+			);
+			path = EyeTesting;
+			sourceTree = "<group>";
+		};
+		EB1364C32A2A4014008A91B3 /* Entering */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364C62A2A42CF008A91B3 /* EnterViewController.swift */,
+			);
+			path = Entering;
+			sourceTree = "<group>";
+		};
+		EB1364C42A2A4027008A91B3 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */,
+				EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */,
+				EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */,
+				EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		EB1364C52A2A403C008A91B3 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364B22A2937C6008A91B3 /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		EB3A246529CA339F00539CFC = {
 			isa = PBXGroup;
 			children = (
+				EB1364AA2A28F084008A91B3 /* Packages */,
 				EB3A247029CA339F00539CFC /* WatchUrEyes */,
 				EB3A248A29CA33A200539CFC /* WatchUrEyesTests */,
 				EB3A249429CA33A200539CFC /* WatchUrEyesUITests */,
@@ -101,14 +228,21 @@
 		EB3A247029CA339F00539CFC /* WatchUrEyes */ = {
 			isa = PBXGroup;
 			children = (
+				EB1364C12A2A4005008A91B3 /* Modules */,
+				EB1364B62A29FECD008A91B3 /* Models */,
+				EB1364AD2A29217B008A91B3 /* Routing */,
 				EB3A247129CA339F00539CFC /* AppDelegate.swift */,
 				EB3A247329CA339F00539CFC /* SceneDelegate.swift */,
-				EB3A247529CA339F00539CFC /* ViewController.swift */,
-				EB3A247729CA339F00539CFC /* Main.storyboard */,
 				EB3A247D29CA33A100539CFC /* Assets.xcassets */,
 				EB3A247F29CA33A100539CFC /* LaunchScreen.storyboard */,
 				EB3A248229CA33A100539CFC /* Info.plist */,
 				EB3A247A29CA339F00539CFC /* WatchUrEyes.xcdatamodeld */,
+				EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */,
+				EB1364B72A2A070D008A91B3 /* CustomARView.swift */,
+				EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */,
+				EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */,
+				EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */,
+				EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */,
 			);
 			path = WatchUrEyes;
 			sourceTree = "<group>";
@@ -146,6 +280,9 @@
 			dependencies = (
 			);
 			name = WatchUrEyes;
+			packageProductDependencies = (
+				EBB588802AFC1F92008E1987 /* SnapKit */,
+			);
 			productName = WatchUrEyes;
 			productReference = EB3A246E29CA339F00539CFC /* WatchUrEyes.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +355,9 @@
 				Base,
 			);
 			mainGroup = EB3A246529CA339F00539CFC;
+			packageReferences = (
+				EBB5887F2AFC1F92008E1987 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EB3A246F29CA339F00539CFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +376,6 @@
 			files = (
 				EB3A248129CA33A100539CFC /* LaunchScreen.storyboard in Resources */,
 				EB3A247E29CA33A100539CFC /* Assets.xcassets in Resources */,
-				EB3A247929CA339F00539CFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +400,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1364B82A2A070D008A91B3 /* CustomARView.swift in Sources */,
+				EB1364CD2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift in Sources */,
+				EB1364C02A2A3F2D008A91B3 /* MainCoordinator.swift in Sources */,
+				EB1364CB2A2A6F6D008A91B3 /* TabBarCoordinator.swift in Sources */,
+				EBD1FB152AFD81E000CF6449 /* ImageAssets.swift in Sources */,
+				EB1364C92A2A4869008A91B3 /* EnterViewCoordinator.swift in Sources */,
 				EB3A247C29CA339F00539CFC /* WatchUrEyes.xcdatamodeld in Sources */,
-				EB3A247629CA339F00539CFC /* ViewController.swift in Sources */,
+				EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */,
+				EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */,
 				EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */,
+				EB1364C72A2A42CF008A91B3 /* EnterViewController.swift in Sources */,
+				EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */,
+				EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */,
+				EB1364BC2A2A3637008A91B3 /* Coordinator.swift in Sources */,
+				EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */,
+				EBD1FB172AFD86BB00CF6449 /* TableMethod.swift in Sources */,
+				EB1364BA2A2A2E5D008A91B3 /* CheckEyeController.swift in Sources */,
+				EBB5887E2AFBBE41008E1987 /* HandGestureProcessor.swift in Sources */,
+				EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */,
+				EB147A182AC5B1A80089A7B2 /* ExerciseCell.swift in Sources */,
+				EB1364A92A28C3FB008A91B3 /* SpeechRecognition.swift in Sources */,
+				EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */,
 				EB3A247429CA339F00539CFC /* SceneDelegate.swift in Sources */,
+				EB1364B52A29EEB1008A91B3 /* EyeExerciseViewController.swift in Sources */,
+				EB1364B32A2937C6008A91B3 /* StatisticsViewController.swift in Sources */,
+				EB1364AF2A29218A008A91B3 /* EyeTestCoordinator.swift in Sources */,
+				EB0EEA182AC6BDBF00919AF8 /* ExerciseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +463,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EB3A247729CA339F00539CFC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB3A247829CA339F00539CFC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EB3A247F29CA33A100539CFC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,6 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -424,6 +579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -444,11 +600,12 @@
 				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchUrEyes/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed for AR usage";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please, allow to use FaceID";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,11 +629,12 @@
 				DEVELOPMENT_TEAM = 7NHN3ZNUVJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WatchUrEyes/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed for AR usage";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please, allow to use FaceID";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +764,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBB5887F2AFC1F92008E1987 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBB588802AFC1F92008E1987 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBB5887F2AFC1F92008E1987 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EB3A247A29CA339F00539CFC /* WatchUrEyes.xcdatamodeld */ = {
