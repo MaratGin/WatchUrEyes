@@ -28,9 +28,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("ewmkmewm1")
         mainCoordinator.navigate(with: .logIn)
         
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.systemPink
+        ]
+//        navigationBarAppearance.backgroundColor = UIColor.white
+//        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+//        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().tintColor = .systemPink
         UITabBar.appearance().backgroundColor = .black
-        UITabBar.appearance().tintColor = .red
-        UITabBar.appearance().barTintColor = .blue
+        UITabBar.appearance().tintColor = .systemPink
+//        UITabBar.appearance().barTintColor = .blue
 //        UITabBar.appearance().barTintColor = Colors.lightYellow
         UITabBar.appearance().unselectedItemTintColor = .yellow
 

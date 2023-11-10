@@ -12,22 +12,25 @@ import SnapKit
 class CheckEyeController: UIViewController {
     
     fileprivate let data = [
-        CustomData(title: "The Islands!", url: "maxcodes.io/enroll", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "Subscribe to maxcodes boiiii!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "StoreKit Course!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "Collection Views!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "MapKit!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
+        TableMethod(name: "Проверка по таблице Сивцева", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.golovinTable!),
+        TableMethod(name: "Проверка по таблице Головина", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.sivcevTable!),
+        TableMethod(name: "Проверка по таблице Амстера", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.amslerTable!),
+        TableMethod(name: "Avetistov", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.golovinTable!),
     ]
+    
+    fileprivate let disclaimerData: [DisclaimerRoute] = [.sivcev, .golovin, .amsler, .amsler]
     
     
     fileprivate let methodCollectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-            
-            cv.register(ExerciseCell.self, forCellWithReuseIdentifier: "cell")
-            return cv
-        }()
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsVerticalScrollIndicator = false
+        
+        cv.register(ExerciseCell.self, forCellWithReuseIdentifier: "cell")
+        return cv
+    }()
     
    var viewModel: CheckEyeViewModelProtocol?
    lazy var avetistovButton: UIButton = {
@@ -63,8 +66,9 @@ class CheckEyeController: UIViewController {
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(40)
             make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(view.snp.height).multipliedBy(0.5)
+            make.height.equalTo(view.frame.height).multipliedBy(0.25)
         }
+
         
         
         
@@ -86,17 +90,21 @@ class CheckEyeController: UIViewController {
 
 extension CheckEyeController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/1.3, height: collectionView.frame.height)
+        print("DELEGATE \(collectionView.frame.height)")
+        return CGSize(width: collectionView.frame.width, height: view.frame.height * 0.25)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        viewModel?.goToDetail()
+        
+        viewModel?.showDisclaimer(name: disclaimerData[indexPath.row])
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ExerciseCell
-        cell.data = self.data[indexPath.item]
+        cell.data1 = self.data[indexPath.item]
+        cell.configureMethod(name: data[indexPath.row].name, description: data[indexPath.row].description, image: data[indexPath.row].image)
+        
         return cell
     }
 }

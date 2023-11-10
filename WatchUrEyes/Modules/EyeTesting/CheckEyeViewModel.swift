@@ -9,6 +9,7 @@ import Foundation
 
 protocol CheckEyeViewModelProtocol {
     func goToAvetistovMethod()
+    func showDisclaimer(name: DisclaimerRoute)
     
 }
 
@@ -26,6 +27,11 @@ class CheckEyeViewModel: CheckEyeViewModelProtocol {
     
     func goToAvetistovMethod() {
         coordinator.navigate(with: .avetisov)
+    }
+    
+    func showDisclaimer(name: DisclaimerRoute) {
+        coordinator.navigate(with: .disclaimer(name: name))
+        
     }
 }
 

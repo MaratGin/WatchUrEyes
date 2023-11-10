@@ -38,8 +38,10 @@
 		EB3A249829CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A249729CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift */; };
 		EBB5887E2AFBBE41008E1987 /* HandGestureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */; };
 		EBB588812AFC1F92008E1987 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EBB588802AFC1F92008E1987 /* SnapKit */; };
-		EBD1FB152AFD81E000CF6449 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */; };
+		EBD1FB152AFD81E000CF6449 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB142AFD81E000CF6449 /* Assets.swift */; };
 		EBD1FB172AFD86BB00CF6449 /* TableMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */; };
+		EBD1FB192AFD93C700CF6449 /* CustomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB182AFD93C700CF6449 /* CustomData.swift */; };
+		EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +97,10 @@
 		EB3A249529CA33A200539CFC /* WatchUrEyesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUrEyesUITests.swift; sourceTree = "<group>"; };
 		EB3A249729CA33A200539CFC /* WatchUrEyesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUrEyesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureProcessor.swift; sourceTree = "<group>"; };
-		EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		EBD1FB142AFD81E000CF6449 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMethod.swift; sourceTree = "<group>"; };
+		EBD1FB182AFD93C700CF6449 /* CustomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomData.swift; sourceTree = "<group>"; };
+		EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */,
+				EBD1FB182AFD93C700CF6449 /* CustomData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */,
 				EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */,
 				EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */,
+				EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -242,7 +248,7 @@
 				EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */,
 				EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */,
 				EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */,
-				EBD1FB142AFD81E000CF6449 /* ImageAssets.swift */,
+				EBD1FB142AFD81E000CF6449 /* Assets.swift */,
 			);
 			path = WatchUrEyes;
 			sourceTree = "<group>";
@@ -404,18 +410,20 @@
 				EB1364CD2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift in Sources */,
 				EB1364C02A2A3F2D008A91B3 /* MainCoordinator.swift in Sources */,
 				EB1364CB2A2A6F6D008A91B3 /* TabBarCoordinator.swift in Sources */,
-				EBD1FB152AFD81E000CF6449 /* ImageAssets.swift in Sources */,
+				EBD1FB152AFD81E000CF6449 /* Assets.swift in Sources */,
 				EB1364C92A2A4869008A91B3 /* EnterViewCoordinator.swift in Sources */,
 				EB3A247C29CA339F00539CFC /* WatchUrEyes.xcdatamodeld in Sources */,
 				EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */,
 				EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */,
 				EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */,
+				EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */,
 				EB1364C72A2A42CF008A91B3 /* EnterViewController.swift in Sources */,
 				EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */,
 				EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */,
 				EB1364BC2A2A3637008A91B3 /* Coordinator.swift in Sources */,
 				EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */,
 				EBD1FB172AFD86BB00CF6449 /* TableMethod.swift in Sources */,
+				EBD1FB192AFD93C700CF6449 /* CustomData.swift in Sources */,
 				EB1364BA2A2A2E5D008A91B3 /* CheckEyeController.swift in Sources */,
 				EBB5887E2AFBBE41008E1987 /* HandGestureProcessor.swift in Sources */,
 				EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */,

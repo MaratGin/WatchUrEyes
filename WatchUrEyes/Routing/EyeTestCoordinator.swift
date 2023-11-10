@@ -20,6 +20,7 @@ class EyeTestCoordinator: EyeTestCoordinatorProtocol {
         case eyeTest
         case avetisov
         case sivcev
+        case disclaimer(name: DisclaimerRoute)
     }
     
     
@@ -41,6 +42,12 @@ class EyeTestCoordinator: EyeTestCoordinatorProtocol {
             
         case .sivcev:
             break
+        case .disclaimer(let name):
+            let viewController = DisclaimerViewController()
+            viewController.name = name
+            navigationController.pushViewController(viewController, animated: true)
+            break
+            
             
         }
     }
