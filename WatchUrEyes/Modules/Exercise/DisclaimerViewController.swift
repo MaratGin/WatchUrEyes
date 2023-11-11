@@ -138,12 +138,19 @@ class DisclaimerViewController: UIViewController {
             sivcevDisclaimer()
         }
         
-        startExpressButton.addTarget(self, action: #selector(changeCountry), for: .touchUpInside)
+        startExpressButton.addTarget(self, action: #selector(startExpress), for: .touchUpInside)
+        startDefaultButton.addTarget(self, action: #selector(startDefault), for: .touchUpInside)
 
         
         // Do any additional setup after loading the view.
     }
-    @objc func changeCountry() {
+    
+    @objc func startDefault() {
+        
+    }
+    
+    
+    @objc func startExpress() {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -188,12 +195,12 @@ class DisclaimerViewController: UIViewController {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 600)
         contentView.addSubview(nameLabel)
         contentView.addSubview(descriptionTextView)
-        contentView.addSubview(startDefaultButton)
         contentView.addSubview(startExpressButton)
         contentView.addSubview(amslerBadExampleImage)
         contentView.addSubview(amslerGoodExampleImage)
         amslerBadExampleImage.image = Asset.amslerBad
         amslerGoodExampleImage.image = Asset.amslerGood
+        startExpressButton.setTitle("Начать проверку", for: .normal)
 //        amslerBadExampleImage.image?.resizingMode = .stretch
         
         backgroundImageView.image = Asset.amslerTable
@@ -277,12 +284,6 @@ class DisclaimerViewController: UIViewController {
 //            make.trailing.equalToSuperview().inset(10)
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(amslerGoodExampleImage.snp.bottom).offset(20)
-            make.width.equalTo(view.snp.width).multipliedBy(0.7)
-            make.height.equalTo(60)
-        }
-        startExpressButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(startDefaultButton.snp.bottom).offset(20)
             make.width.equalTo(view.snp.width).multipliedBy(0.7)
             make.height.equalTo(60)
         }
