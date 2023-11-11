@@ -1,28 +1,32 @@
 //
-//  DefaultSivcevViewController.swift
+//  DefaultGolovinViewController.swift
 //  WatchUrEyes
 //
 //  Created by Marat Giniyatov on 11.11.2023.
 //
 
 import UIKit
-import Foundation
 import SwiftUI
 import Speech
 import AVFoundation
+import Foundation
 
-class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate {
+class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     private var userGuess = ""
     private var recognizedString = ""
-    private var currentRow = 0
+    private var currentRow = 1
     private var currentIndex = 0
     
     private var errorCapV1V2 = 0
     private var errorCapV3V6 = 0
     private var errorCapV6V12 = 0
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru-RU")) // Выберите нужную локаль
+    private var leftEyeResultRow = 5
+    private var rightEyeResultRow = 5
+
+    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru-RU"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
@@ -32,6 +36,7 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.frame.size = SizeAsset.row1Size
         iv.backgroundColor = .blue
         return iv
     }()
@@ -43,7 +48,7 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 100, weight: .heavy)
+        label.font = .systemFont(ofSize: 26, weight: .heavy)
         label.text = "Chats AI"
         return label
     }()
@@ -58,24 +63,23 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         return hostingController
     }()
-    
-    var currentLetterLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 248, weight: .heavy)
-        return label
+
+    var currentLetterImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupLeftEye()
+        print("VIEW DID LOAD")
     }
-    
+
     
     func setupLeftEye() {
         nameLabel.text = "Закройте левый глаз"
@@ -107,19 +111,17 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
         hostingController.removeFromParent()
         startTest()
     }
+    /*
+    func setupEyeTimerFinish2() {
+        hostingController2.view.isHidden = true
+        hostingController2.removeFromParent()
+        startTest2()
+    }
+     */
     
-    func startTest() {
-        nameLabel.removeFromSuperview()
-        view.backgroundColor = .red
-        view.addSubview(currentLetterLabel)
-        currentLetterLabel.backgroundColor = .yellow
-        NSLayoutConstraint.activate([
-            currentLetterLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            currentLetterLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            currentLetterLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            currentLetterLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        var row = [""]
+    func getRow() -> [(String, UIImage)] {
+        var row = [("И", UIImage(named: "e")!)]
+        
         switch currentRow {
         case 1:
             row = TextAsset.row1
@@ -148,10 +150,64 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
         default:
             row = TextAsset.row1
         }
+        return row
+    }
+    
+    func getLetterSize(row: Int) -> CGSize {
+        switch row {
+        case 1:
+            return SizeAsset.row1Size
+        case 2:
+            return SizeAsset.row2Size
+        case 3:
+            return SizeAsset.row3Size
+        case 4:
+            return SizeAsset.row4Size
+        case 5:
+            return SizeAsset.row5Size
+        case 6:
+            return SizeAsset.row6size
+        case 7:
+            return SizeAsset.row7Size
+        case 8:
+            return SizeAsset.row8Size
+        case 9:
+            return SizeAsset.row9Size
+        case 10:
+            return SizeAsset.row10Size
+        case 11:
+            return SizeAsset.row11Size
+        case 12:
+            return SizeAsset.row12Size
+        default:
+            return SizeAsset.row10Size
+        }
+    }
+ 
+    
+    func startTest() {
+        print("&&&")
+        nameLabel.removeFromSuperview()
+//        view.backgroundColor = .red
+        view.addSubview(currentLetterImageView)
+//        currentLetterImageView.backgroundColor = .yellow
+        var size = getLetterSize(row: currentRow)
+        NSLayoutConstraint.activate([
+//            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//            currentLetterImageView.widthAnchor.constraint(equalToConstant: size.width),
+//            currentLetterImageView.heightAnchor.constraint(equalToConstant: size.height)
+        ])
         
-        currentLetterLabel.text = row[currentIndex]
         
+        var row = getRow()
         
+        currentLetterImageView.image = row[currentIndex].1
+//        currentLetterLabel.text = row[currentIndex].first
+        
+        print("&&&")
+
         speechRecognizer?.delegate = self
 
               SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -164,43 +220,18 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
                       }
                   }
               }
+        print("&&&")
+
     }
     
     func moveNextLetter() {
-        var row = [""]
-        switch currentRow {
-        case 1:
-            row = TextAsset.row1
-        case 2:
-            row = TextAsset.row2
-        case 3:
-            row = TextAsset.row3
-        case 4:
-            row = TextAsset.row4
-        case 5:
-            row = TextAsset.row5
-        case 6:
-            row = TextAsset.row6
-        case 7:
-            row = TextAsset.row7
-        case 8:
-            row = TextAsset.row8
-        case 9:
-            row = TextAsset.row9
-        case 10:
-            row = TextAsset.row10
-        case 11:
-            row = TextAsset.row11
-        case 12:
-            row = TextAsset.row12
-        default:
-            row = TextAsset.row1
-        }
+        var row = getRow()
         
-        currentLetterLabel.text = row[currentIndex]
+        currentLetterImageView.image = row[currentIndex].1
     }
     
     func startRecording() throws {
+        print("DEBUG")
             if let recognitionTask = recognitionTask {
                 recognitionTask.cancel()
                 self.recognitionTask = nil
@@ -213,27 +244,43 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
     
             let inputNode = audioEngine.inputNode
             guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create recognition request") }
+        print("DEBUG")
 
             recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
                 var isFinal = false
 
                 if let result = result {
+                    print("DEBUG REsULT \(result.bestTranscription.formattedString)")
+
+                    
                     // Ваш код для обработки распознанного текста
                     print(result.bestTranscription.formattedString)
                     isFinal = result.isFinal
                     var string = ""
-                    string = result.bestTranscription.formattedString
                     
-                    if let range = string.range(of: self.recognizedString) {
-                        string.removeSubrange(range)
+                    if self.currentRow == 1 && self.currentIndex == 0 {
+                        self.userGuess = result.bestTranscription.formattedString
+//                        self.checkIfCorrectGuess()
+                    } else {
+                        string = result.bestTranscription.formattedString
+//                        self.recognizedString += result.bestTranscription.formattedString
+                        if let range = string.range(of: self.recognizedString) {
+                            string.removeSubrange(range)
+                            print("SUBSTRING \(string)")
+                        }
+                        self.recognizedString += result.bestTranscription.formattedString
+                        self.userGuess = string
+//                        self.checkIfCorrectGuess()
                     }
-                    self.userGuess = string
-                    self.checkIfCorrectGuess()
-                    self.moveNextLetter()
+                   
+                    
+                    
                 }
                 
 
                 if error != nil || isFinal {
+                    print("DEBUG ERROR \(isFinal) \(error?.localizedDescription)")
+
                     self.audioEngine.stop()
                     inputNode.removeTap(onBus: 0)
 
@@ -251,53 +298,78 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
             try audioEngine.start()
         }
     
-    func checkIfCorrectGuess() -> Bool {
-        var symbolIndex = 1
-        var row = [""]
-        var symbol = ""
+
+    func updateImageSize() {
         switch currentRow {
         case 1:
-            row = TextAsset.row1
+            currentLetterImageView.frame.size = SizeAsset.row1Size
+            
         case 2:
-            row = TextAsset.row2
+            currentLetterImageView.frame.size = SizeAsset.row2Size
+            
         case 3:
-            row = TextAsset.row3
+            currentLetterImageView.frame.size = SizeAsset.row3Size
+            
         case 4:
-            row = TextAsset.row4
+            currentLetterImageView.frame.size = SizeAsset.row4Size
+            
         case 5:
-            row = TextAsset.row5
+            currentLetterImageView.frame.size = SizeAsset.row5Size
+            
         case 6:
-            row = TextAsset.row6
+            currentLetterImageView.frame.size = SizeAsset.row6size
+            
         case 7:
-            row = TextAsset.row7
+            currentLetterImageView.frame.size = SizeAsset.row7Size
+            
         case 8:
-            row = TextAsset.row8
+            currentLetterImageView.frame.size = SizeAsset.row8Size
+            
         case 9:
-            row = TextAsset.row9
+            currentLetterImageView.frame.size = SizeAsset.row9Size
+            
         case 10:
-            row = TextAsset.row10
+            currentLetterImageView.frame.size = SizeAsset.row10Size
+            
         case 11:
-            row = TextAsset.row11
+            currentLetterImageView.frame.size = SizeAsset.row11Size
+            
         case 12:
-            row = TextAsset.row12
+            currentLetterImageView.frame.size = SizeAsset.row12Size
         default:
-            row = TextAsset.row1
+            currentLetterImageView.frame.size = SizeAsset.row12Size
         }
-        symbol = row[currentIndex]
+    }
+    
+    func checkIfCorrectGuess() -> Bool {
+        var symbolIndex = 1
+        var row = getRow()
+        var symbol = ""
+      
+        symbol = row[currentIndex].0
 
         
-        let regexPattern = "\\[\(symbol.lowercased())\(symbol.uppercased())]\\b"
+        let regexPattern = "\\b[\(symbol.lowercased())\(symbol.uppercased())]\\b"
+        print("CHECK \(symbol) guess:  \(userGuess)")
 
         if let range = userGuess.range(of: regexPattern, options: .regularExpression) {
             if currentIndex == row.count - 1 {
                 currentIndex = 0
                 if currentRow == 12 {
-                    endCheck()
+                    print("END LEFT CHECK")
+                    endLeftCheck()
+                    return true
                 } else {
                     currentRow += 1
+                    updateImageSize()
+                    moveNextLetter()
+                    print("SIZE \(currentLetterImageView.frame.width)")
+                    return true
                 }
             } else {
                 currentIndex += 1
+                moveNextLetter()
+                return true
             }
             print("ОТВЕТ \(range.lowerBound)")
 
@@ -306,33 +378,72 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
             print("ОТВЕТ  НЕВЕРНО")
             if currentRow >= 1 && currentRow <= 2 {
                 errorCapV1V2 += 1
+                
                 if currentIndex == row.count - 1 {
                     currentIndex = 0
                     currentRow += 1
-                    currentLetterLabel.text = row[currentIndex]
+//                    updateImageSize()
+//                    currentLetterImageView.image = row[currentIndex].1
                 } else {
                     currentIndex += 1
                 }
-                endCheck()
+                endLeftCheck()
+                return false
             }
             
             if currentRow >= 3 && currentRow <= 6 {
                 errorCapV3V6 += 1
-                endCheck()
+                if errorCapV3V6 == 2 {
+                    print("END LEFT CHECK")
+                    endLeftCheck()
+                    return false
+                }
             }
             
             if currentRow >= 7 {
                 errorCapV6V12 += 1
-                if errorCapV6V12 == 2 {
-                    endCheck()
+                if errorCapV6V12 == 3 {
+                    print("END LEFT CHECK")
+                    endLeftCheck()
+                    return false
                 }
             }
             return false
         }
     }
     
-    func endCheck() {
-        
+    func endLeftCheck() {
+        currentLetterImageView.removeFromSuperview()
+        hostingController.removeFromParent()
+        leftEyeResultRow = currentRow
+        currentRow = 1
+        currentIndex = 0
+        errorCapV1V2 = 0
+        errorCapV3V6 = 0
+        errorCapV6V12 = 0
+        userGuess = ""
+        recognizedString = ""
+//        speechRecognizer.st
+        stopRecording()
+
+//        setupRightEye()
+        endRightCheck()
     }
+    func stopRecording() {
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            recognitionRequest?.endAudio()
+            recognitionTask?.cancel()
+            recognitionRequest = nil
+            recognitionTask = nil
+        }
     
+    func endRightCheck() {
+        rightEyeResultRow = currentRow
+        let resultViewController = SivcevResultViewController()
+        resultViewController.userDistance = 5.0
+        resultViewController.userLeftRow = leftEyeResultRow
+        resultViewController.userRightRow = rightEyeResultRow
+        self.navigationController?.pushViewController(resultViewController, animated: true)
+    }
 }

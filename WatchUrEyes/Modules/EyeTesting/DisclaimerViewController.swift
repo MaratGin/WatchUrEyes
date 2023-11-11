@@ -152,7 +152,8 @@ class DisclaimerViewController: UIViewController {
             var viewController = AmslerViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
         case .golovin:
-            break
+            var viewController = DefaultGolovinViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
         case .sivcev:
             var viewController = DefaultSivcevViewController()
             self.navigationController?.pushViewController(viewController, animated: true)

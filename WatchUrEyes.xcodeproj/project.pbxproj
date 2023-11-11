@@ -47,6 +47,9 @@
 		EBD1FB262AFF842A00CF6449 /* DefaultSivcevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */; };
 		EBD1FB282AFF843500CF6449 /* CustomSivcevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */; };
 		EBD1FB2A2AFF844D00CF6449 /* DisclaimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */; };
+		EBD1FB2C2AFFE26200CF6449 /* SivcevResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB2B2AFFE26200CF6449 /* SivcevResultViewController.swift */; };
+		EBD1FB2F2AFFFA0200CF6449 /* DefaultGolovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB2E2AFFFA0200CF6449 /* DefaultGolovinViewController.swift */; };
+		EBD1FB312AFFFA0E00CF6449 /* GolovinResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSivcevViewController.swift; sourceTree = "<group>"; };
 		EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSivcevViewController.swift; sourceTree = "<group>"; };
 		EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCoordinator.swift; sourceTree = "<group>"; };
+		EBD1FB2B2AFFE26200CF6449 /* SivcevResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SivcevResultViewController.swift; sourceTree = "<group>"; };
+		EBD1FB2E2AFFFA0200CF6449 /* DefaultGolovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGolovinViewController.swift; sourceTree = "<group>"; };
+		EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolovinResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,9 +192,10 @@
 		EB1364C22A2A400B008A91B3 /* EyeTesting */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB2D2AFFF9D800CF6449 /* GolovinTest */,
 				EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */,
 				EBD1FB212AFF691600CF6449 /* AmslerTable */,
-				EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */,
+				EBD1FB242AFF7D5700CF6449 /* SivcevTest */,
 				EB3A247529CA339F00539CFC /* EyeSightViewController.swift */,
 				EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */,
 				EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */,
@@ -300,13 +307,23 @@
 			path = AmslerTable;
 			sourceTree = "<group>";
 		};
-		EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */ = {
+		EBD1FB242AFF7D5700CF6449 /* SivcevTest */ = {
 			isa = PBXGroup;
 			children = (
 				EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */,
 				EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */,
+				EBD1FB2B2AFFE26200CF6449 /* SivcevResultViewController.swift */,
 			);
-			path = SivcevViewConroller;
+			path = SivcevTest;
+			sourceTree = "<group>";
+		};
+		EBD1FB2D2AFFF9D800CF6449 /* GolovinTest */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1FB2E2AFFFA0200CF6449 /* DefaultGolovinViewController.swift */,
+				EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */,
+			);
+			path = GolovinTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1364B82A2A070D008A91B3 /* CustomARView.swift in Sources */,
+				EBD1FB312AFFFA0E00CF6449 /* GolovinResultViewController.swift in Sources */,
 				EB1364CD2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift in Sources */,
 				EB1364C02A2A3F2D008A91B3 /* MainCoordinator.swift in Sources */,
 				EB1364CB2A2A6F6D008A91B3 /* TabBarCoordinator.swift in Sources */,
@@ -456,6 +474,7 @@
 				EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */,
 				EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */,
 				EBD1FB282AFF843500CF6449 /* CustomSivcevViewController.swift in Sources */,
+				EBD1FB2F2AFFFA0200CF6449 /* DefaultGolovinViewController.swift in Sources */,
 				EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */,
 				EBD1FB2A2AFF844D00CF6449 /* DisclaimerCoordinator.swift in Sources */,
 				EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */,
@@ -475,6 +494,7 @@
 				EBD1FB232AFF692E00CF6449 /* AmslerViewController.swift in Sources */,
 				EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */,
 				EB3A247429CA339F00539CFC /* SceneDelegate.swift in Sources */,
+				EBD1FB2C2AFFE26200CF6449 /* SivcevResultViewController.swift in Sources */,
 				EB1364B52A29EEB1008A91B3 /* EyeExerciseViewController.swift in Sources */,
 				EBD1FB1F2AFEF4D700CF6449 /* TimerView.swift in Sources */,
 				EB1364B32A2937C6008A91B3 /* StatisticsViewController.swift in Sources */,
