@@ -44,6 +44,7 @@
 		EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */; };
 		EBD1FB1D2AFEF44900CF6449 /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */; };
 		EBD1FB1F2AFEF4D700CF6449 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */; };
+		EBD1FB232AFF692E00CF6449 /* AmslerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB222AFF692E00CF6449 /* AmslerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
 		EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		EBD1FB222AFF692E00CF6449 /* AmslerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmslerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,8 @@
 		EB1364C42A2A4027008A91B3 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */,
+				EBD1FB212AFF691600CF6449 /* AmslerTable */,
 				EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */,
 				EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */,
 				EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */,
@@ -282,6 +286,21 @@
 				EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EBD1FB212AFF691600CF6449 /* AmslerTable */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1FB222AFF692E00CF6449 /* AmslerViewController.swift */,
+			);
+			path = AmslerTable;
+			sourceTree = "<group>";
+		};
+		EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SivcevViewConroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +463,7 @@
 				EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */,
 				EB147A182AC5B1A80089A7B2 /* ExerciseCell.swift in Sources */,
 				EB1364A92A28C3FB008A91B3 /* SpeechRecognition.swift in Sources */,
+				EBD1FB232AFF692E00CF6449 /* AmslerViewController.swift in Sources */,
 				EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */,
 				EB3A247429CA339F00539CFC /* SceneDelegate.swift in Sources */,
 				EB1364B52A29EEB1008A91B3 /* EyeExerciseViewController.swift in Sources */,

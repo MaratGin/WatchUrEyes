@@ -147,6 +147,16 @@ class DisclaimerViewController: UIViewController {
     
     @objc func startDefault() {
         
+        switch name {
+        case .amsler:
+            var viewController = AmslerViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .golovin:
+            break
+        case .sivcev:
+            break
+        }
+        
     }
     
     
@@ -195,12 +205,12 @@ class DisclaimerViewController: UIViewController {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 600)
         contentView.addSubview(nameLabel)
         contentView.addSubview(descriptionTextView)
-        contentView.addSubview(startExpressButton)
+        contentView.addSubview(startDefaultButton)
         contentView.addSubview(amslerBadExampleImage)
         contentView.addSubview(amslerGoodExampleImage)
         amslerBadExampleImage.image = Asset.amslerBad
         amslerGoodExampleImage.image = Asset.amslerGood
-        startExpressButton.setTitle("Начать проверку", for: .normal)
+        startDefaultButton.setTitle("Начать проверку", for: .normal)
 //        amslerBadExampleImage.image?.resizingMode = .stretch
         
         backgroundImageView.image = Asset.amslerTable
