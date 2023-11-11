@@ -154,7 +154,8 @@ class DisclaimerViewController: UIViewController {
         case .golovin:
             break
         case .sivcev:
-            break
+            var viewController = DefaultSivcevViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         
     }

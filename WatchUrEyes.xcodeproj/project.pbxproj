@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB0EEA182AC6BDBF00919AF8 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */; };
 		EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */; };
 		EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */; };
 		EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */; };
@@ -45,6 +44,9 @@
 		EBD1FB1D2AFEF44900CF6449 /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */; };
 		EBD1FB1F2AFEF4D700CF6449 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */; };
 		EBD1FB232AFF692E00CF6449 /* AmslerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB222AFF692E00CF6449 /* AmslerViewController.swift */; };
+		EBD1FB262AFF842A00CF6449 /* DefaultSivcevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */; };
+		EBD1FB282AFF843500CF6449 /* CustomSivcevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */; };
+		EBD1FB2A2AFF844D00CF6449 /* DisclaimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -107,6 +108,9 @@
 		EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
 		EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		EBD1FB222AFF692E00CF6449 /* AmslerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmslerViewController.swift; sourceTree = "<group>"; };
+		EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSivcevViewController.swift; sourceTree = "<group>"; };
+		EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSivcevViewController.swift; sourceTree = "<group>"; };
+		EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */,
 				EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */,
 				EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */,
+				EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -181,6 +186,9 @@
 		EB1364C22A2A400B008A91B3 /* EyeTesting */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */,
+				EBD1FB212AFF691600CF6449 /* AmslerTable */,
+				EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */,
 				EB3A247529CA339F00539CFC /* EyeSightViewController.swift */,
 				EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */,
 				EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */,
@@ -199,13 +207,9 @@
 		EB1364C42A2A4027008A91B3 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */,
-				EBD1FB212AFF691600CF6449 /* AmslerTable */,
 				EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */,
 				EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */,
-				EB0EEA172AC6BDBF00919AF8 /* ExerciseDetailViewController.swift */,
 				EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */,
-				EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -299,6 +303,8 @@
 		EBD1FB242AFF7D5700CF6449 /* SivcevViewConroller */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB252AFF842A00CF6449 /* DefaultSivcevViewController.swift */,
+				EBD1FB272AFF843500CF6449 /* CustomSivcevViewController.swift */,
 			);
 			path = SivcevViewConroller;
 			sourceTree = "<group>";
@@ -449,11 +455,14 @@
 				EBD1FB1D2AFEF44900CF6449 /* Int + Extension.swift in Sources */,
 				EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */,
 				EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */,
+				EBD1FB282AFF843500CF6449 /* CustomSivcevViewController.swift in Sources */,
 				EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */,
+				EBD1FB2A2AFF844D00CF6449 /* DisclaimerCoordinator.swift in Sources */,
 				EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */,
 				EB1364C72A2A42CF008A91B3 /* EnterViewController.swift in Sources */,
 				EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */,
 				EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */,
+				EBD1FB262AFF842A00CF6449 /* DefaultSivcevViewController.swift in Sources */,
 				EB1364BC2A2A3637008A91B3 /* Coordinator.swift in Sources */,
 				EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */,
 				EBD1FB172AFD86BB00CF6449 /* TableMethod.swift in Sources */,
@@ -470,7 +479,6 @@
 				EBD1FB1F2AFEF4D700CF6449 /* TimerView.swift in Sources */,
 				EB1364B32A2937C6008A91B3 /* StatisticsViewController.swift in Sources */,
 				EB1364AF2A29218A008A91B3 /* EyeTestCoordinator.swift in Sources */,
-				EB0EEA182AC6BDBF00919AF8 /* ExerciseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

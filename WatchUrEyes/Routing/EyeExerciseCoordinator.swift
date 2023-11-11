@@ -31,8 +31,8 @@ class EyeExerciseCoordinator: EyeTestCoordinatorProtocol {
             navigationController.pushViewController(viewController, animated: true)
             
         case .detailExercise:
-            let viewController = ExerciseDetailViewController()
-            navigationController.pushViewController(viewController, animated: true)
+//            let viewController = ExerciseDetailViewController()
+//            navigationController.pushViewController(viewController, animated: true)
             break
             
         case .sivcev:

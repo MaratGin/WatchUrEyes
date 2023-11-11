@@ -30,9 +30,7 @@ class EyeSightViewController: UIViewController {
     var leftEye = SCNNode()
     var rightEye = SCNNode()
 
-    //-----------------------
     // MARK: - View LifeCycle
-    //-----------------------
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,16 +47,15 @@ class EyeSightViewController: UIViewController {
         sceneView.contraintARSCNToSuperView()
 
 
-        //2. Setup The Eye Nodes
         setupEyeNode()
     }
 
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
 
-    //-----------------------
     // MARK: - Eye Node Setup
-    //-----------------------
+    
     /// Creates To SCNSpheres To Loosely Represent The Eyes
+    ///
     func setupEyeNode(){
         let eyeGeometry2 = SCNSphere(radius: 0.005)
 //        eyeGeometry2.materials.first?.diffuse
@@ -81,9 +78,7 @@ class EyeSightViewController: UIViewController {
     }
 }
 
-//------------------------------
 // MARK: - SCNVector3 Extensions
-//------------------------------
 
 extension SCNVector3 {
 
@@ -94,9 +89,7 @@ extension SCNVector3 {
     static func - (l: SCNVector3, r: SCNVector3) -> SCNVector3 { return SCNVector3Make(l.x - r.x, l.y - r.y, l.z - r.z) }
 }
 
-//--------------------------
 // MARK: - ARSCNViewDelegate
-//--------------------------
 
 extension EyeSightViewController: ARSCNViewDelegate{
 

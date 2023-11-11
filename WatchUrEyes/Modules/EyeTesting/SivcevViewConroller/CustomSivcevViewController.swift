@@ -1,17 +1,19 @@
 //
-//  ExerciseDetailViewController.swift
+//  CustomSivcevViewController.swift
 //  WatchUrEyes
 //
-//  Created by Marat Giniyatov on 29.09.2023.
+//  Created by Marat Giniyatov on 11.11.2023.
 //
 
 import UIKit
 
-class ExerciseDetailViewController: UIViewController {
+class EndingSivcevViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .red
+
         // Do any additional setup after loading the view.
     }
     

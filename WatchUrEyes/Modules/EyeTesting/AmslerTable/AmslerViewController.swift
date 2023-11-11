@@ -49,6 +49,7 @@ class AmslerViewController: UIViewController {
         }
         let hostingController = UIHostingController(rootView: timerView)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+//        timerView.
         
         
         // Добавляем UIHostingController как дочерний контроллер
