@@ -64,7 +64,7 @@ final class TabBarController: UITabBarController {
         UITabBar.appearance().unselectedItemTintColor = UIColor.systemPink
     }
     
-     func setUpTabBar(eyeExerciseCoordinator: EyeExerciseCoordinator, eyeTestCoordinator: EyeTestCoordinator, statisticsCoordinator: StatisticsCoordinator) {
+     func setUpTabBar(eyeExerciseCoordinator: EyeExerciseCoordinator, eyeTestCoordinator: EyeTestCoordinator, cameraViewCoordinator: CameraViewCoordinator) {
         let dataSource: [tabBarItem] = [.feed, .exercise, .check]
     
         self.viewControllers = dataSource.map {
@@ -85,7 +85,7 @@ final class TabBarController: UITabBarController {
 //                return self.wrappedInNavigationController(with: profileViewController, title: $0.title)
                 
             case .check:
-                let checkEyeSightViewController = statisticsCoordinator.configureViewController()
+                let checkEyeSightViewController = cameraViewCoordinator.configureViewController()
                 
                 return checkEyeSightViewController
                 
@@ -99,14 +99,11 @@ final class TabBarController: UITabBarController {
             $1.tabBarItem.image = UIImage(systemName: dataSource[$0].iconName)
             
             $1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: .zero, bottom: -5, right: .zero)
-            
         }
-        
     }
     
     private func wrappedInNavigationController(with: UIViewController, title: Any?) -> UINavigationController {
             return UINavigationController(rootViewController: with)
 
         }
-    
 }

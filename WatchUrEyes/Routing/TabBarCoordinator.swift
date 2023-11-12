@@ -19,7 +19,7 @@ class TabBarCoordinator: TabBarcoordinatorProtocol {
     lazy var rootViewController = TabBarController()
     lazy var eyeTestCoordinator = EyeTestCoordinator()
     lazy var eyeExerciseCoordinator = EyeExerciseCoordinator()
-    lazy var statisticsCoordinator = StatisticsCoordinator()
+    lazy var statisticsCoordinator = CameraViewCoordinator()
 
     
     // MARK: - Private variables
@@ -68,8 +68,8 @@ class TabBarCoordinator: TabBarcoordinatorProtocol {
                                                  image: UIImage(systemName: "chart.bar.fill"),
                                                  tag: 1)
         let statisticsController = statisticsCoordinator.configureViewController()
-        statisticsController.tabBarItem = UITabBarItem(title: "Статистика",
-                                                    image: UIImage(systemName: "person.crop.circle"),
+        statisticsController.tabBarItem = UITabBarItem(title: "Детекция глаз",
+                                                    image: UIImage(systemName: "eye.fill"),
                                                     tag: 2)
         rootViewController.viewControllers = [eyeExerciseViewController, eyeTestViewController, statisticsController]
         navigate(with: .eyeTest)

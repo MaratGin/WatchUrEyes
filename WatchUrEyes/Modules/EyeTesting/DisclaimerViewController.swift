@@ -29,7 +29,7 @@ class DisclaimerViewController: UIViewController {
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.setTitle("Обычный режим", for: .normal)
+        button.setTitle("Начать проверку", for: .normal)
         return button
     }()
     
@@ -248,12 +248,6 @@ class DisclaimerViewController: UIViewController {
 //            make.trailing.equalToSuperview().inset(10)
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(descriptionTextView.snp.bottom).offset(20)
-            make.width.equalTo(view.snp.width).multipliedBy(0.7)
-            make.height.equalTo(60)
-        }
-        startExpressButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(startDefaultButton.snp.bottom).offset(20)
             make.width.equalTo(view.snp.width).multipliedBy(0.7)
             make.height.equalTo(60)
         }

@@ -28,13 +28,13 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Можно задетектировать только 1 руку.
+        // Детектируем только 1 руку.
         handPoseRequest.maximumHandCount = 1
-        // Add state change handler to hand gesture processor. / Добавляем обработчик состояний для жеста реки
+        // Добавляем обработчик состояний для жеста реки
         gestureProcessor.didChangeStateClosure = { [weak self] state in
             self?.handleGestureStateChange(state: state)
         }
-        // Устанавливаем, что на дабл клик стирается доска.
+         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         recognizer.numberOfTouchesRequired = 1
         recognizer.numberOfTapsRequired = 2
@@ -61,7 +61,7 @@ class CameraViewController: UIViewController {
     }
     
     func setupAVSession() throws {
-        // Select a front facing camera, make an input.
+        
         guard let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
             throw AppError.captureSessionSetup(reason: "Could not find a front facing camera.")
         }
@@ -74,7 +74,7 @@ class CameraViewController: UIViewController {
         session.beginConfiguration()
         session.sessionPreset = AVCaptureSession.Preset.high
         
-        // Add a video input.
+        
         guard session.canAddInput(deviceInput) else {
             throw AppError.captureSessionSetup(reason: "Could not add video device input to the session")
         }
@@ -95,11 +95,10 @@ class CameraViewController: UIViewController {
 }
     
     func processPoints(thumbTip: CGPoint?, indexTip: CGPoint?, middleTip: CGPoint?, ringTip: CGPoint?, pinkyTip: CGPoint?) {
-        // Check that we have both points.
         guard let thumbPoint = thumbTip, let indexPoint = indexTip,
               let middlePoint = middleTip, let ringPoint = ringTip,
               let pinkyPoint = pinkyTip else {
-            // If there were no observations for more than 2 seconds reset gesture processor.
+            // Сброс, если нет наблюдей больше 2 секунд.
             if Date().timeIntervalSince(lastObservationTimestamp) > 2 {
                 gestureProcessor.reset()
             }
@@ -107,7 +106,7 @@ class CameraViewController: UIViewController {
             return
         }
         
-        // Convert points from AVFoundation coordinates to UIKit coordinates.
+        // Конвертация координат
         let previewLayer = cameraView.previewLayer
         
         let thumbPointConverted = previewLayer.layerPointConverted(fromCaptureDevicePoint: thumbPoint)
@@ -119,13 +118,11 @@ class CameraViewController: UIViewController {
 
 
         
-        // Process new points
         gestureProcessor.processPointsPair((thumbPointConverted, indexPointConverted, middlePointConverted, ringPointConverted, pinkyPointConverted ))
     }
     
     private func handleGestureStateChange(state: HandGestureProcessor.State) {
         let pointsPair = gestureProcessor.lastProcessedPointsPair
-//        var tipsColor: UIColor
         print("Found hand")
         cameraView.showPoints([pointsPair.thumbTip, pointsPair.indexTip, pointsPair.middleTip, pointsPair.ringTip, pointsPair.pinkyTip], color: .red)
     }
@@ -158,10 +155,8 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         let handler = VNImageRequestHandler(cmSampleBuffer: sampleBuffer, orientation: .up, options: [:])
         do {
-            // Perform VNDetectHumanHandPoseRequest
             try handler.perform([handPoseRequest])
-            // Continue only when a hand was detected in the frame.
-            // Since we set the maximumHandCount property of the request to 1, there will be at most one observation.
+
             guard let observation = handPoseRequest.results?.first else {
                 return
             }
@@ -173,7 +168,6 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let pinkyFingerPoints = try observation.recognizedPoints(.littleFinger)
             
             
-            // Look for tip points.
             guard let thumbTipPoint = thumbPoints[.thumbTip],
                     let indexTipPoint = indexFingerPoints[.indexTip],
                     let middleTipPoint = middleFingerPoints[.middleTip],
@@ -182,14 +176,12 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             else {
                 return
             }
-            // Ignore low confidence points.
             guard thumbTipPoint.confidence > 0.3 && indexTipPoint.confidence > 0.3
                     && middleTipPoint.confidence > 0.3 && ringTipPoint.confidence > 0.3
                     && pinkyTipPoint.confidence > 0.3
             else {
                 return
             }
-            // Convert points from Vision coordinates to AVFoundation coordinates.
             thumbTip = CGPoint(x: thumbTipPoint.location.x, y: 1 - thumbTipPoint.location.y)
             indexTip = CGPoint(x: indexTipPoint.location.x, y: 1 - indexTipPoint.location.y)
             middleTip = CGPoint(x: middleTipPoint.location.x, y: 1 - middleTipPoint.location.y)

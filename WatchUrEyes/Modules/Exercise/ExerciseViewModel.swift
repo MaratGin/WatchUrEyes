@@ -9,7 +9,7 @@ import Foundation
 
 protocol ExerciseViewModelProtocol {
     func goToDetail()
-    
+    func goToExercise(type: ExerciseMethod)
 }
 
 class ExerciseViewModel: ExerciseViewModelProtocol {
@@ -25,6 +25,10 @@ class ExerciseViewModel: ExerciseViewModelProtocol {
     
     func goToDetail() {
         coordinator.navigate(with: .detailExercise)
+    }
+    
+    func goToExercise(type: ExerciseMethod) {
+        coordinator.navigate(with: .exercise(type: type))
     }
 }
 

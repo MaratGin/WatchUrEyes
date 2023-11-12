@@ -13,6 +13,8 @@ import Foundation
 
 class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate {
     
+    
+    private var isFinish = false
     private var userGuess = ""
     private var recognizedString = ""
     private var currentRow = 1
@@ -82,7 +84,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
 
     
     func setupLeftEye() {
-        nameLabel.text = "Закройте левый глаз"
+        nameLabel.text = "Закройте один глаз"
         view.addSubview(nameLabel)
         
         
@@ -120,35 +122,35 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
      */
     
     func getRow() -> [(String, UIImage)] {
-        var row = [("И", UIImage(named: "e")!)]
+        var row = [("влево", UIImage(named: "left")!)]
         
         switch currentRow {
         case 1:
-            row = TextAsset.row1
+            row = TextAsset.golovinRow1
         case 2:
-            row = TextAsset.row2
+            row = TextAsset.golovinRow2
         case 3:
-            row = TextAsset.row3
+            row = TextAsset.golovinRow3
         case 4:
-            row = TextAsset.row4
+            row = TextAsset.golovinRow4
         case 5:
-            row = TextAsset.row5
+            row = TextAsset.golovinRow5
         case 6:
-            row = TextAsset.row6
+            row = TextAsset.golovinRow6
         case 7:
-            row = TextAsset.row7
+            row = TextAsset.golovinRow7
         case 8:
-            row = TextAsset.row8
+            row = TextAsset.golovinRow8
         case 9:
-            row = TextAsset.row9
+            row = TextAsset.golovinRow9
         case 10:
-            row = TextAsset.row10
+            row = TextAsset.golovinRow10
         case 11:
-            row = TextAsset.row11
+            row = TextAsset.golovinRow11
         case 12:
-            row = TextAsset.row12
+            row = TextAsset.golovinRow12
         default:
-            row = TextAsset.row1
+            row = TextAsset.golovinRow1
         }
         return row
     }
@@ -251,26 +253,45 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
 
                 if let result = result {
                     print("DEBUG REsULT \(result.bestTranscription.formattedString)")
+                    print("DEBUG RECOGNIZED \(self.recognizedString)")
 
                     
                     // Ваш код для обработки распознанного текста
-                    print(result.bestTranscription.formattedString)
+//                    print(result.bestTranscription.formattedString)
                     isFinal = result.isFinal
                     var string = ""
-                    
+//                    result.bestTranscription.
                     if self.currentRow == 1 && self.currentIndex == 0 {
                         self.userGuess = result.bestTranscription.formattedString
 //                        self.checkIfCorrectGuess()
+                    
+                               // Код, который нужно выполнить на главном потоке
+                               // Например, обновление пользовательского интерфейса
+                               // или выполнение какой-то работы, которая требует доступа к главному потоку
+                        if !self.isFinish {
+                            self.checkIfCorrectGuess()
+                        }
+                            self.recognizedString = result.bestTranscription.formattedString
+
                     } else {
                         string = result.bestTranscription.formattedString
 //                        self.recognizedString += result.bestTranscription.formattedString
                         if let range = string.range(of: self.recognizedString) {
                             string.removeSubrange(range)
-                            print("SUBSTRING \(string)")
+//                            print("SUBSTRING \(string)")
+                        } else {
+//                            print("NO SUBSTRING")
                         }
-                        self.recognizedString += result.bestTranscription.formattedString
+                        self.recognizedString = result.bestTranscription.formattedString
                         self.userGuess = string
-//                        self.checkIfCorrectGuess()
+                        
+                               // Код, который нужно выполнить на главном потоке
+                               // Например, обновление пользовательского интерфейса
+                               // или выполнение какой-то работы, которая требует доступа к главному потоку
+                        if !self.isFinish {
+                            self.checkIfCorrectGuess()
+                        }
+
                     }
                    
                     
@@ -293,7 +314,6 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
             inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
                 self.recognitionRequest?.append(buffer)
             }
-
             audioEngine.prepare()
             try audioEngine.start()
         }
@@ -302,42 +322,173 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
     func updateImageSize() {
         switch currentRow {
         case 1:
-            currentLetterImageView.frame.size = SizeAsset.row1Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row1Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row1Size.height)
+            ])
+            
             
         case 2:
-            currentLetterImageView.frame.size = SizeAsset.row2Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row2Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row2Size.height)
+            ])
+//            currentLetterImageView.frame.size = SizeAsset.row2Size
             
         case 3:
-            currentLetterImageView.frame.size = SizeAsset.row3Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row3Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row3Size.height)
+            ])
             
         case 4:
-            currentLetterImageView.frame.size = SizeAsset.row4Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row4Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row4Size.height)
+            ])
             
         case 5:
-            currentLetterImageView.frame.size = SizeAsset.row5Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row5Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row5Size.height)
+            ])
             
         case 6:
-            currentLetterImageView.frame.size = SizeAsset.row6size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row6size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row6size.height)
+            ])
             
         case 7:
-            currentLetterImageView.frame.size = SizeAsset.row7Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row7Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row7Size.height)
+            ])
             
         case 8:
-            currentLetterImageView.frame.size = SizeAsset.row8Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row8Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row8Size.height)
+            ])
             
         case 9:
-            currentLetterImageView.frame.size = SizeAsset.row9Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row9Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row9Size.height)
+            ])
             
         case 10:
-            currentLetterImageView.frame.size = SizeAsset.row10Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row10Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row10Size.height)
+            ])
             
         case 11:
-            currentLetterImageView.frame.size = SizeAsset.row11Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row11Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row11Size.height)
+            ])
             
         case 12:
-            currentLetterImageView.frame.size = SizeAsset.row12Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row12Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row12Size.height)
+            ])
         default:
-            currentLetterImageView.frame.size = SizeAsset.row12Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row2Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row2Size.height)
+            ])
         }
     }
     
@@ -347,16 +498,21 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
         var symbol = ""
       
         symbol = row[currentIndex].0
+        userGuess = userGuess.lowercased()
 
-        
-        let regexPattern = "\\b[\(symbol.lowercased())\(symbol.uppercased())]\\b"
+        let regexPattern = "\\b(?:в)?\(symbol.lowercased())\\b"
+        userGuess = userGuess.replacingOccurrences(of: " ", with: "")
+
         print("CHECK \(symbol) guess:  \(userGuess)")
 
         if let range = userGuess.range(of: regexPattern, options: .regularExpression) {
             if currentIndex == row.count - 1 {
+                print("ОТВЕТ  ПРАВИЛЬНЫЙ \(range.lowerBound)")
+
                 currentIndex = 0
                 if currentRow == 12 {
                     print("END LEFT CHECK")
+                    isFinish = true
                     endLeftCheck()
                     return true
                 } else {
@@ -371,8 +527,6 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
                 moveNextLetter()
                 return true
             }
-            print("ОТВЕТ \(range.lowerBound)")
-
             return true
         } else {
             print("ОТВЕТ  НЕВЕРНО")
@@ -387,6 +541,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
                 } else {
                     currentIndex += 1
                 }
+                isFinish = true
                 endLeftCheck()
                 return false
             }
@@ -395,6 +550,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
                 errorCapV3V6 += 1
                 if errorCapV3V6 == 2 {
                     print("END LEFT CHECK")
+                    isFinish = true
                     endLeftCheck()
                     return false
                 }
@@ -404,6 +560,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
                 errorCapV6V12 += 1
                 if errorCapV6V12 == 3 {
                     print("END LEFT CHECK")
+                    isFinish = true
                     endLeftCheck()
                     return false
                 }
@@ -430,6 +587,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
         endRightCheck()
     }
     func stopRecording() {
+        print("STOP")
             audioEngine.stop()
             audioEngine.inputNode.removeTap(onBus: 0)
             recognitionRequest?.endAudio()
@@ -440,7 +598,7 @@ class DefaultGolovinViewController: UIViewController, SFSpeechRecognizerDelegate
     
     func endRightCheck() {
         rightEyeResultRow = currentRow
-        let resultViewController = SivcevResultViewController()
+        let resultViewController = GolovinResultViewController()
         resultViewController.userDistance = 5.0
         resultViewController.userLeftRow = leftEyeResultRow
         resultViewController.userRightRow = rightEyeResultRow

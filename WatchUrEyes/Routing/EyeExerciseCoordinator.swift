@@ -19,7 +19,7 @@ class EyeExerciseCoordinator: EyeTestCoordinatorProtocol {
     internal enum Route {
         case eyeExercise
         case detailExercise
-        case sivcev
+        case exercise(type: ExerciseMethod)
     }
     
     func navigate(with route: Route) {
@@ -35,8 +35,23 @@ class EyeExerciseCoordinator: EyeTestCoordinatorProtocol {
 //            navigationController.pushViewController(viewController, animated: true)
             break
             
-        case .sivcev:
-            break
+        case .exercise(let type):
+            switch type {
+            case .bliz:
+                let viewController = ExerciseViewController()
+                viewController.exercise = type
+                navigationController.pushViewController(viewController, animated: true)
+                
+            case .daln:
+                let viewController = ExerciseViewController()
+                viewController.exercise = type
+                navigationController.pushViewController(viewController, animated: true)
+                
+            case .relax:
+                let viewController = ExerciseViewController()
+                viewController.exercise = type
+                navigationController.pushViewController(viewController, animated: true)
+            }
             
         }
     }

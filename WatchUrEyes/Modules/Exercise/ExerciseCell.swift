@@ -77,6 +77,33 @@ class ExerciseCell: UICollectionViewCell {
         
     }
     
+    func configureExercise(name: String, description: String, image: UIImage) {
+        
+        setupExerciseConstraints()
+        backgroundImageView.image = image
+        nameLabel.text = name
+        descriptionTextView.text = description
+        nameLabel.font = .systemFont(ofSize: 16, weight: .heavy)
+        
+    }
+    func setupExerciseConstraints() {
+        backgroundImageView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalToSuperview().inset(5)
+        }
+        blurView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.25)
+        }
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(blurView.snp.height)
+        }
+    }
+    
     func setupBlur() {
         let blurEffect = UIBlurEffect(style: .light) // Вы можете изменить стиль блюра по вашему выбору
         var gradientLayer = CAGradientLayer()

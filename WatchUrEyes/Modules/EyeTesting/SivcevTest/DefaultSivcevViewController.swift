@@ -127,7 +127,7 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
     
     
     func setupLeftEye() {
-        nameLabel.text = "Закройте левый глаз"
+        nameLabel.text = "Закройте один глаз"
         view.addSubview(nameLabel)
         
         
@@ -352,13 +352,10 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
                             string.removeSubrange(range)
                             print("SUBSTRING \(string)")
                         }
-                        self.recognizedString += result.bestTranscription.formattedString
+                        self.recognizedString = result.bestTranscription.formattedString
                         self.userGuess = string
                         self.checkIfCorrectGuess()
                     }
-                   
-                    
-                    
                 }
                 
 
@@ -447,42 +444,173 @@ class DefaultSivcevViewController: UIViewController, SFSpeechRecognizerDelegate 
     func updateImageSize() {
         switch currentRow {
         case 1:
-            currentLetterImageView.frame.size = SizeAsset.row1Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row1Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row1Size.height)
+            ])
+            
             
         case 2:
-            currentLetterImageView.frame.size = SizeAsset.row2Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row2Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row2Size.height)
+            ])
+//            currentLetterImageView.frame.size = SizeAsset.row2Size
             
         case 3:
-            currentLetterImageView.frame.size = SizeAsset.row3Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row3Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row3Size.height)
+            ])
             
         case 4:
-            currentLetterImageView.frame.size = SizeAsset.row4Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row4Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row4Size.height)
+            ])
             
         case 5:
-            currentLetterImageView.frame.size = SizeAsset.row5Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row5Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row5Size.height)
+            ])
             
         case 6:
-            currentLetterImageView.frame.size = SizeAsset.row6size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row6size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row6size.height)
+            ])
             
         case 7:
-            currentLetterImageView.frame.size = SizeAsset.row7Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row7Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row7Size.height)
+            ])
             
         case 8:
-            currentLetterImageView.frame.size = SizeAsset.row8Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row8Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row8Size.height)
+            ])
             
         case 9:
-            currentLetterImageView.frame.size = SizeAsset.row9Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row9Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row9Size.height)
+            ])
             
         case 10:
-            currentLetterImageView.frame.size = SizeAsset.row10Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row10Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row10Size.height)
+            ])
             
         case 11:
-            currentLetterImageView.frame.size = SizeAsset.row11Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row11Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row11Size.height)
+            ])
             
         case 12:
-            currentLetterImageView.frame.size = SizeAsset.row12Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row12Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row12Size.height)
+            ])
         default:
-            currentLetterImageView.frame.size = SizeAsset.row12Size
+            currentLetterImageView.removeFromSuperview()
+//            currentLetterImageView.frame.size = SizeAsset.row1Size
+            view.addSubview(currentLetterImageView)
+
+            NSLayoutConstraint.activate([
+    //            currentLetterImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                currentLetterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                currentLetterImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                currentLetterImageView.widthAnchor.constraint(equalToConstant: SizeAsset.row2Size.width),
+                currentLetterImageView.heightAnchor.constraint(equalToConstant: SizeAsset.row2Size.height)
+            ])
         }
     }
     

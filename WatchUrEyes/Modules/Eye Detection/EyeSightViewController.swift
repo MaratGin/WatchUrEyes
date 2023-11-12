@@ -18,6 +18,19 @@ class EyeSightViewController: UIViewController {
         return scene
     }()
     
+    var distanceLabel: UILabel = {
+        var label = UILabel()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.text = "Distance 0 cm"
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        label.font = .systemFont(ofSize: 24, weight: .heavy)
+        
+        return label
+    }()
+    
     var transparentView: UIView = {
         let view = UIView()
         return view
@@ -34,7 +47,20 @@ class EyeSightViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         self.view.addSubview(sceneView)
+        self.view.addSubview(distanceLabel)
+        self.view.bringSubviewToFront(distanceLabel)
+        
+        NSLayoutConstraint.activate(
+            [
+                distanceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+                distanceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                distanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                distanceLabel.heightAnchor.constraint(equalToConstant: 60)
+            ]
+        )
+       
 
         //1. Задаём конфигурацию для Face Tracking'а
         guard ARFaceTrackingConfiguration.isSupported else { return }
@@ -54,8 +80,7 @@ class EyeSightViewController: UIViewController {
 
     // MARK: - Eye Node Setup
     
-    /// Creates To SCNSpheres To Loosely Represent The Eyes
-    ///
+    
     func setupEyeNode(){
         let eyeGeometry2 = SCNSphere(radius: 0.005)
 //        eyeGeometry2.materials.first?.diffuse
@@ -136,10 +161,9 @@ extension EyeSightViewController: ARSCNViewDelegate{
             
             // Подгоняем под сантиметры
             let averageDistanceCM = (Int(round(averageDistance * 100)))
-            if averageDistanceCM >= 220 {
-                print("Approximate Distance Of Face From Camera = \(averageDistanceCM)")
+                print("Distance  = \(averageDistanceCM)")
+                self.distanceLabel.text = " Distance = \(averageDistanceCM)cm"
 
-            }
         }
     }
 }
@@ -151,7 +175,7 @@ extension ARSCNView {
         self.translatesAutoresizingMaskIntoConstraints = false
 
         if let superView = self.superview {
-            self.topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
+            self.topAnchor.constraint(equalTo: superView.topAnchor, constant: 100).isActive = true
             self.leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
             self.trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
             self.bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true

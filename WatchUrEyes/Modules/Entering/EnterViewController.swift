@@ -52,7 +52,6 @@ class EnterViewController: UIViewController {
         var error: NSError? = nil
         let reason = "Please authorize with biometrics"
         
-        /*
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, error in
@@ -73,7 +72,7 @@ class EnterViewController: UIViewController {
             present(alert, animated: true)
             // can not use
                 }
-        */
+        
         coordinator?.navigate(with: .moveToApp)        
     }
 }

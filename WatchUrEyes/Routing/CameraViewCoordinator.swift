@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol StatisticsCoordinatorProtocol: Coordinator {
+protocol CameraViewCoordinatorProtocol: Coordinator {
     
 }
 
-class StatisticsCoordinator: StatisticsCoordinatorProtocol {
+class CameraViewCoordinator: CameraViewCoordinatorProtocol {
     
     private let navigationController = UINavigationController()
 
@@ -26,7 +26,7 @@ class StatisticsCoordinator: StatisticsCoordinatorProtocol {
     func navigate(with route: Route) {
         switch route {
         case .statistics:
-            let viewController = StatisticsViewController()
+            let viewController = EyeSightViewController()
             navigationController.pushViewController(viewController, animated: true)
             
         case .avetisov:

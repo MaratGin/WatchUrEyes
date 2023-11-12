@@ -10,7 +10,6 @@
 		EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */; };
 		EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */; };
 		EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */; };
-		EB1364A92A28C3FB008A91B3 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */; };
 		EB1364AF2A29218A008A91B3 /* EyeTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */; };
 		EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B02A2932C9008A91B3 /* TabBarController.swift */; };
 		EB1364B32A2937C6008A91B3 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364B22A2937C6008A91B3 /* StatisticsViewController.swift */; };
@@ -23,7 +22,7 @@
 		EB1364C92A2A4869008A91B3 /* EnterViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364C82A2A4869008A91B3 /* EnterViewCoordinator.swift */; };
 		EB1364CB2A2A6F6D008A91B3 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CA2A2A6F6D008A91B3 /* TabBarCoordinator.swift */; };
 		EB1364CD2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */; };
-		EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */; };
+		EB1364CF2A2A76FD008A91B3 /* CameraViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364CE2A2A76FD008A91B3 /* CameraViewCoordinator.swift */; };
 		EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */; };
 		EB147A182AC5B1A80089A7B2 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */; };
 		EB3A247229CA339F00539CFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A247129CA339F00539CFC /* AppDelegate.swift */; };
@@ -50,6 +49,31 @@
 		EBD1FB2C2AFFE26200CF6449 /* SivcevResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB2B2AFFE26200CF6449 /* SivcevResultViewController.swift */; };
 		EBD1FB2F2AFFFA0200CF6449 /* DefaultGolovinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB2E2AFFFA0200CF6449 /* DefaultGolovinViewController.swift */; };
 		EBD1FB312AFFFA0E00CF6449 /* GolovinResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */; };
+		EBD1FB352B00250200CF6449 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB342B00250200CF6449 /* ExerciseViewController.swift */; };
+		EBD1FB372B00264B00CF6449 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1FB362B00264B00CF6449 /* ExerciseModel.swift */; };
+		EBD1FB3F2B002A1100CF6449 /* relaxExercise2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB392B002A1000CF6449 /* relaxExercise2.mp4 */; };
+		EBD1FB402B002A1100CF6449 /* relaxExercise6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB3A2B002A1000CF6449 /* relaxExercise6.mp4 */; };
+		EBD1FB412B002A1100CF6449 /* relaxExercise1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB3B2B002A1100CF6449 /* relaxExercise1.mp4 */; };
+		EBD1FB422B002A1100CF6449 /* relaxExercise4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB3C2B002A1100CF6449 /* relaxExercise4.mp4 */; };
+		EBD1FB432B002A1100CF6449 /* relaxExercise5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB3D2B002A1100CF6449 /* relaxExercise5.mp4 */; };
+		EBD1FB442B002A1100CF6449 /* relaxExercise3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB3E2B002A1100CF6449 /* relaxExercise3.mp4 */; };
+		EBD1FB4A2B0036F300CF6449 /* bliz1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB452B0036F200CF6449 /* bliz1.mp4 */; };
+		EBD1FB4B2B0036F300CF6449 /* bliz3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB462B0036F200CF6449 /* bliz3.mp4 */; };
+		EBD1FB4C2B0036F300CF6449 /* bliz2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB472B0036F200CF6449 /* bliz2.mp4 */; };
+		EBD1FB4D2B0036F300CF6449 /* bliz4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB482B0036F300CF6449 /* bliz4.mp4 */; };
+		EBD1FB4E2B0036F300CF6449 /* bliz5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB492B0036F300CF6449 /* bliz5.mp4 */; };
+		EBD1FB512B00376400CF6449 /* bliz6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB4F2B00376300CF6449 /* bliz6.mp4 */; };
+		EBD1FB522B00376400CF6449 /* bliz7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB502B00376400CF6449 /* bliz7.mp4 */; };
+		EBD1FB592B00392500CF6449 /* daln1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB532B00392400CF6449 /* daln1.mp4 */; };
+		EBD1FB5A2B00392500CF6449 /* daln2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB542B00392500CF6449 /* daln2.mp4 */; };
+		EBD1FB5B2B00392500CF6449 /* daln6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB552B00392500CF6449 /* daln6.mp4 */; };
+		EBD1FB5D2B00392500CF6449 /* daln4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB572B00392500CF6449 /* daln4.mp4 */; };
+		EBD1FB5E2B00392500CF6449 /* daln5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB582B00392500CF6449 /* daln5.mp4 */; };
+		EBD1FB602B003FFF00CF6449 /* relax10.m4v in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB5F2B003FFF00CF6449 /* relax10.m4v */; };
+		EBD1FB622B0043DF00CF6449 /* daln3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB612B0043DF00CF6449 /* daln3.mp4 */; };
+		EBD1FB632B0043DF00CF6449 /* daln3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB612B0043DF00CF6449 /* daln3.mp4 */; };
+		EBD1FB642B0043E000CF6449 /* daln3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB612B0043DF00CF6449 /* daln3.mp4 */; };
+		EBD1FB662B00441300CF6449 /* RPReplay_Final1654509953.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = EBD1FB652B00441300CF6449 /* RPReplay_Final1654509953.MP4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +97,6 @@
 		EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 		EB1364AB2A28F084008A91B3 /* gaze-tracker-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "gaze-tracker-master"; path = "../gaze-tracker-master"; sourceTree = "<group>"; };
 		EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestCoordinator.swift; sourceTree = "<group>"; };
 		EB1364B02A2932C9008A91B3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -87,7 +110,7 @@
 		EB1364C82A2A4869008A91B3 /* EnterViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewCoordinator.swift; sourceTree = "<group>"; };
 		EB1364CA2A2A6F6D008A91B3 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeExerciseCoordinator.swift; sourceTree = "<group>"; };
-		EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
+		EB1364CE2A2A76FD008A91B3 /* CameraViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewCoordinator.swift; sourceTree = "<group>"; };
 		EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEyeViewModel.swift; sourceTree = "<group>"; };
 		EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		EB3A246E29CA339F00539CFC /* WatchUrEyes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchUrEyes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +140,29 @@
 		EBD1FB2B2AFFE26200CF6449 /* SivcevResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SivcevResultViewController.swift; sourceTree = "<group>"; };
 		EBD1FB2E2AFFFA0200CF6449 /* DefaultGolovinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGolovinViewController.swift; sourceTree = "<group>"; };
 		EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolovinResultViewController.swift; sourceTree = "<group>"; };
+		EBD1FB342B00250200CF6449 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		EBD1FB362B00264B00CF6449 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		EBD1FB392B002A1000CF6449 /* relaxExercise2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise2.mp4; sourceTree = "<group>"; };
+		EBD1FB3A2B002A1000CF6449 /* relaxExercise6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise6.mp4; sourceTree = "<group>"; };
+		EBD1FB3B2B002A1100CF6449 /* relaxExercise1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise1.mp4; sourceTree = "<group>"; };
+		EBD1FB3C2B002A1100CF6449 /* relaxExercise4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise4.mp4; sourceTree = "<group>"; };
+		EBD1FB3D2B002A1100CF6449 /* relaxExercise5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise5.mp4; sourceTree = "<group>"; };
+		EBD1FB3E2B002A1100CF6449 /* relaxExercise3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = relaxExercise3.mp4; sourceTree = "<group>"; };
+		EBD1FB452B0036F200CF6449 /* bliz1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz1.mp4; sourceTree = "<group>"; };
+		EBD1FB462B0036F200CF6449 /* bliz3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz3.mp4; sourceTree = "<group>"; };
+		EBD1FB472B0036F200CF6449 /* bliz2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz2.mp4; sourceTree = "<group>"; };
+		EBD1FB482B0036F300CF6449 /* bliz4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz4.mp4; sourceTree = "<group>"; };
+		EBD1FB492B0036F300CF6449 /* bliz5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz5.mp4; sourceTree = "<group>"; };
+		EBD1FB4F2B00376300CF6449 /* bliz6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz6.mp4; sourceTree = "<group>"; };
+		EBD1FB502B00376400CF6449 /* bliz7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bliz7.mp4; sourceTree = "<group>"; };
+		EBD1FB532B00392400CF6449 /* daln1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln1.mp4; sourceTree = "<group>"; };
+		EBD1FB542B00392500CF6449 /* daln2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln2.mp4; sourceTree = "<group>"; };
+		EBD1FB552B00392500CF6449 /* daln6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln6.mp4; sourceTree = "<group>"; };
+		EBD1FB572B00392500CF6449 /* daln4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln4.mp4; sourceTree = "<group>"; };
+		EBD1FB582B00392500CF6449 /* daln5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln5.mp4; sourceTree = "<group>"; };
+		EBD1FB5F2B003FFF00CF6449 /* relax10.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = relax10.m4v; sourceTree = "<group>"; };
+		EBD1FB612B0043DF00CF6449 /* daln3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = daln3.mp4; sourceTree = "<group>"; };
+		EBD1FB652B00441300CF6449 /* RPReplay_Final1654509953.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RPReplay_Final1654509953.MP4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +209,7 @@
 				EB1364B02A2932C9008A91B3 /* TabBarController.swift */,
 				EB1364AE2A29218A008A91B3 /* EyeTestCoordinator.swift */,
 				EB1364CC2A2A75EA008A91B3 /* EyeExerciseCoordinator.swift */,
-				EB1364CE2A2A76FD008A91B3 /* StatisticsCoordinator.swift */,
+				EB1364CE2A2A76FD008A91B3 /* CameraViewCoordinator.swift */,
 				EBD1FB292AFF844D00CF6449 /* DisclaimerCoordinator.swift */,
 			);
 			path = Routing;
@@ -174,6 +220,7 @@
 			children = (
 				EBD1FB162AFD86BB00CF6449 /* TableMethod.swift */,
 				EBD1FB182AFD93C700CF6449 /* CustomData.swift */,
+				EBD1FB362B00264B00CF6449 /* ExerciseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +228,8 @@
 		EB1364C12A2A4005008A91B3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB332B001F6300CF6449 /* Eye Detection */,
+				EBD1FB322B001F5B00CF6449 /* Hand Detection */,
 				EB1364C52A2A403C008A91B3 /* Statistics */,
 				EB1364C42A2A4027008A91B3 /* Exercise */,
 				EB1364C32A2A4014008A91B3 /* Entering */,
@@ -196,7 +245,6 @@
 				EBD1FB1A2AFD9FA800CF6449 /* DisclaimerViewController.swift */,
 				EBD1FB212AFF691600CF6449 /* AmslerTable */,
 				EBD1FB242AFF7D5700CF6449 /* SivcevTest */,
-				EB3A247529CA339F00539CFC /* EyeSightViewController.swift */,
 				EB1364B92A2A2E5D008A91B3 /* CheckEyeController.swift */,
 				EB1364D12A2B57B4008A91B3 /* CheckEyeViewModel.swift */,
 			);
@@ -217,6 +265,7 @@
 				EB1364B42A29EEB1008A91B3 /* EyeExerciseViewController.swift */,
 				EB147A172AC5B1A80089A7B2 /* ExerciseCell.swift */,
 				EB0EEA192AC6BDD500919AF8 /* ExerciseViewModel.swift */,
+				EBD1FB342B00250200CF6449 /* ExerciseViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -232,6 +281,27 @@
 		EB3A246529CA339F00539CFC = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB452B0036F200CF6449 /* bliz1.mp4 */,
+				EBD1FB5F2B003FFF00CF6449 /* relax10.m4v */,
+				EBD1FB3B2B002A1100CF6449 /* relaxExercise1.mp4 */,
+				EBD1FB552B00392500CF6449 /* daln6.mp4 */,
+				EBD1FB532B00392400CF6449 /* daln1.mp4 */,
+				EBD1FB542B00392500CF6449 /* daln2.mp4 */,
+				EBD1FB572B00392500CF6449 /* daln4.mp4 */,
+				EBD1FB582B00392500CF6449 /* daln5.mp4 */,
+				EBD1FB4F2B00376300CF6449 /* bliz6.mp4 */,
+				EBD1FB502B00376400CF6449 /* bliz7.mp4 */,
+				EBD1FB492B0036F300CF6449 /* bliz5.mp4 */,
+				EBD1FB482B0036F300CF6449 /* bliz4.mp4 */,
+				EBD1FB462B0036F200CF6449 /* bliz3.mp4 */,
+				EBD1FB472B0036F200CF6449 /* bliz2.mp4 */,
+				EBD1FB3A2B002A1000CF6449 /* relaxExercise6.mp4 */,
+				EBD1FB392B002A1000CF6449 /* relaxExercise2.mp4 */,
+				EBD1FB3E2B002A1100CF6449 /* relaxExercise3.mp4 */,
+				EBD1FB3C2B002A1100CF6449 /* relaxExercise4.mp4 */,
+				EBD1FB3D2B002A1100CF6449 /* relaxExercise5.mp4 */,
+				EBD1FB652B00441300CF6449 /* RPReplay_Final1654509953.MP4 */,
+				EBD1FB612B0043DF00CF6449 /* daln3.mp4 */,
 				EB1364AA2A28F084008A91B3 /* Packages */,
 				EB3A247029CA339F00539CFC /* WatchUrEyes */,
 				EB3A248A29CA33A200539CFC /* WatchUrEyesTests */,
@@ -253,6 +323,7 @@
 		EB3A247029CA339F00539CFC /* WatchUrEyes */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB382B002A0400CF6449 /* Videos */,
 				EBD1FB202AFEF4DB00CF6449 /* Utils */,
 				EB1364C12A2A4005008A91B3 /* Modules */,
 				EB1364B62A29FECD008A91B3 /* Models */,
@@ -263,12 +334,6 @@
 				EB3A247F29CA33A100539CFC /* LaunchScreen.storyboard */,
 				EB3A248229CA33A100539CFC /* Info.plist */,
 				EB3A247A29CA339F00539CFC /* WatchUrEyes.xcdatamodeld */,
-				EB1364A82A28C3FB008A91B3 /* SpeechRecognition.swift */,
-				EB1364B72A2A070D008A91B3 /* CustomARView.swift */,
-				EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */,
-				EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */,
-				EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */,
-				EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */,
 			);
 			path = WatchUrEyes;
 			sourceTree = "<group>";
@@ -293,6 +358,7 @@
 		EBD1FB202AFEF4DB00CF6449 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1FB1E2AFEF4D700CF6449 /* TimerView.swift */,
 				EBD1FB142AFD81E000CF6449 /* Assets.swift */,
 				EBD1FB1C2AFEF44900CF6449 /* Int + Extension.swift */,
 			);
@@ -324,6 +390,32 @@
 				EBD1FB302AFFFA0E00CF6449 /* GolovinResultViewController.swift */,
 			);
 			path = GolovinTest;
+			sourceTree = "<group>";
+		};
+		EBD1FB322B001F5B00CF6449 /* Hand Detection */ = {
+			isa = PBXGroup;
+			children = (
+				EB1364B72A2A070D008A91B3 /* CustomARView.swift */,
+				EB0EEA1B2AC6F21E00919AF8 /* CameraViewController.swift */,
+				EB0EEA1D2AC6F24D00919AF8 /* CameraView.swift */,
+				EBB5887D2AFBBE41008E1987 /* HandGestureProcessor.swift */,
+			);
+			path = "Hand Detection";
+			sourceTree = "<group>";
+		};
+		EBD1FB332B001F6300CF6449 /* Eye Detection */ = {
+			isa = PBXGroup;
+			children = (
+				EB3A247529CA339F00539CFC /* EyeSightViewController.swift */,
+			);
+			path = "Eye Detection";
+			sourceTree = "<group>";
+		};
+		EBD1FB382B002A0400CF6449 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +528,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD1FB662B00441300CF6449 /* RPReplay_Final1654509953.MP4 in Resources */,
+				EBD1FB592B00392500CF6449 /* daln1.mp4 in Resources */,
+				EBD1FB522B00376400CF6449 /* bliz7.mp4 in Resources */,
 				EB3A248129CA33A100539CFC /* LaunchScreen.storyboard in Resources */,
+				EBD1FB442B002A1100CF6449 /* relaxExercise3.mp4 in Resources */,
 				EB3A247E29CA33A100539CFC /* Assets.xcassets in Resources */,
+				EBD1FB512B00376400CF6449 /* bliz6.mp4 in Resources */,
+				EBD1FB602B003FFF00CF6449 /* relax10.m4v in Resources */,
+				EBD1FB4D2B0036F300CF6449 /* bliz4.mp4 in Resources */,
+				EBD1FB3F2B002A1100CF6449 /* relaxExercise2.mp4 in Resources */,
+				EBD1FB622B0043DF00CF6449 /* daln3.mp4 in Resources */,
+				EBD1FB5A2B00392500CF6449 /* daln2.mp4 in Resources */,
+				EBD1FB402B002A1100CF6449 /* relaxExercise6.mp4 in Resources */,
+				EBD1FB432B002A1100CF6449 /* relaxExercise5.mp4 in Resources */,
+				EBD1FB5B2B00392500CF6449 /* daln6.mp4 in Resources */,
+				EBD1FB4B2B0036F300CF6449 /* bliz3.mp4 in Resources */,
+				EBD1FB4C2B0036F300CF6449 /* bliz2.mp4 in Resources */,
+				EBD1FB5D2B00392500CF6449 /* daln4.mp4 in Resources */,
+				EBD1FB4E2B0036F300CF6449 /* bliz5.mp4 in Resources */,
+				EBD1FB4A2B0036F300CF6449 /* bliz1.mp4 in Resources */,
+				EBD1FB5E2B00392500CF6449 /* daln5.mp4 in Resources */,
+				EBD1FB422B002A1100CF6449 /* relaxExercise4.mp4 in Resources */,
+				EBD1FB412B002A1100CF6449 /* relaxExercise1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD1FB632B0043DF00CF6449 /* daln3.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD1FB642B0043E000CF6449 /* daln3.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +587,7 @@
 				EB3A247C29CA339F00539CFC /* WatchUrEyes.xcdatamodeld in Sources */,
 				EBD1FB1D2AFEF44900CF6449 /* Int + Extension.swift in Sources */,
 				EB0EEA1C2AC6F21E00919AF8 /* CameraViewController.swift in Sources */,
+				EBD1FB352B00250200CF6449 /* ExerciseViewController.swift in Sources */,
 				EB3A247629CA339F00539CFC /* EyeSightViewController.swift in Sources */,
 				EBD1FB282AFF843500CF6449 /* CustomSivcevViewController.swift in Sources */,
 				EBD1FB2F2AFFFA0200CF6449 /* DefaultGolovinViewController.swift in Sources */,
@@ -480,7 +596,7 @@
 				EBD1FB1B2AFD9FA800CF6449 /* DisclaimerViewController.swift in Sources */,
 				EB1364C72A2A42CF008A91B3 /* EnterViewController.swift in Sources */,
 				EB1364D22A2B57B4008A91B3 /* CheckEyeViewModel.swift in Sources */,
-				EB1364CF2A2A76FD008A91B3 /* StatisticsCoordinator.swift in Sources */,
+				EB1364CF2A2A76FD008A91B3 /* CameraViewCoordinator.swift in Sources */,
 				EBD1FB262AFF842A00CF6449 /* DefaultSivcevViewController.swift in Sources */,
 				EB1364BC2A2A3637008A91B3 /* Coordinator.swift in Sources */,
 				EB0EEA1A2AC6BDD500919AF8 /* ExerciseViewModel.swift in Sources */,
@@ -488,9 +604,9 @@
 				EBD1FB192AFD93C700CF6449 /* CustomData.swift in Sources */,
 				EB1364BA2A2A2E5D008A91B3 /* CheckEyeController.swift in Sources */,
 				EBB5887E2AFBBE41008E1987 /* HandGestureProcessor.swift in Sources */,
+				EBD1FB372B00264B00CF6449 /* ExerciseModel.swift in Sources */,
 				EB0EEA1E2AC6F24D00919AF8 /* CameraView.swift in Sources */,
 				EB147A182AC5B1A80089A7B2 /* ExerciseCell.swift in Sources */,
-				EB1364A92A28C3FB008A91B3 /* SpeechRecognition.swift in Sources */,
 				EBD1FB232AFF692E00CF6449 /* AmslerViewController.swift in Sources */,
 				EB1364B12A2932C9008A91B3 /* TabBarController.swift in Sources */,
 				EB3A247429CA339F00539CFC /* SceneDelegate.swift in Sources */,

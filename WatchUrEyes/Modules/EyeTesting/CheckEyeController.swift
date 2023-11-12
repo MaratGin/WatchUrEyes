@@ -14,11 +14,10 @@ class CheckEyeController: UIViewController {
     fileprivate let data = [
         TableMethod(name: "Проверка по таблице Сивцева  ", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.sivcevTable!),
         TableMethod(name: "Проверка по таблице Головина", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.golovinTable!),
-        TableMethod(name: "Проверка по таблице Амстера", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.amslerTable!),
-        TableMethod(name: "Avetistov", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.golovinTable!),
+        TableMethod(name: "Проверка по таблице Амстера", description: "Some description to represent textView in it's work, so i'm writing very very long text", image: Asset.amslerTable!)
     ]
     
-    fileprivate let disclaimerData: [DisclaimerRoute] = [.sivcev, .golovin, .amsler, .amsler]
+    fileprivate let disclaimerData: [DisclaimerRoute] = [.sivcev, .golovin, .amsler]
     
     
     fileprivate let methodCollectionView: UICollectionView = {
@@ -51,7 +50,7 @@ class CheckEyeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CheckEyeController")
-        avetistovButton.addTarget(self, action: #selector(moveToAvetisovMethod), for: .touchUpInside)
+//        avetistovButton.addTarget(self, action: #selector(moveToAvetisovMethod), for: .touchUpInside)
         view.backgroundColor = .black
         view.addSubview(methodCollectionView)
 //        view.addSubview(avetistovButton)

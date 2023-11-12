@@ -11,74 +11,77 @@ import UIKit
 class EyeExerciseViewController: UIViewController {
     
     var viewModel: ExerciseViewModelProtocol?
-
+    
     fileprivate let data = [
-        CustomData(title: "The Islands!", url: "maxcodes.io/enroll", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "Subscribe to maxcodes boiiii!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "StoreKit Course!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "Collection Views!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
-        CustomData(title: "MapKit!", url: "maxcodes.io/courses", backgroundImage: UIImage(named: "example")!),
+        TableMethod(name: "Упражнения для снятия напряжения", description: "", image: Asset.relax!),
+        TableMethod(name: "Упражнения при близорукости", description: "", image: Asset.bliz!),
+        TableMethod(name: "Упражнения при дальнозоркости", description: "", image: Asset.daln!)
     ]
     
-    let eyeStressLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 32.0, weight: .bold)
-
-        //        label.textColor = .black
-        label.textAlignment = .left
-        label.backgroundColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Снятие напряжения"
-        return label
-    }()
-    
     fileprivate let basicCollectionView: UICollectionView = {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-            cv.translatesAutoresizingMaskIntoConstraints = false
-            cv.register(ExerciseCell.self, forCellWithReuseIdentifier: "cell")
-            return cv
-        }()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(ExerciseCell.self, forCellWithReuseIdentifier: "cell")
+        return cv
+    }()
     
     override func viewDidLoad() {
         
         view.backgroundColor = .systemBackground
         super.viewDidLoad()
         view.addSubview(basicCollectionView)
-        view.addSubview(eyeStressLabel)
-        basicCollectionView.showsHorizontalScrollIndicator = false
         basicCollectionView.delegate = self
         basicCollectionView.dataSource = self
         setUpConstraints()
     }
     
     func setUpConstraints() {
-        eyeStressLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
-        eyeStressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        eyeStressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-//        eyeStressLabel.heightAnchor.constraint(equalToConstant: 400).isActive = true
-
-        basicCollectionView.topAnchor.constraint(equalTo: eyeStressLabel.bottomAnchor, constant: 5).isActive = true
-        basicCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        basicCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        basicCollectionView.heightAnchor.constraint(equalToConstant: view.frame.width/2).isActive = true
+        basicCollectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(40)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(view.frame.height).multipliedBy(0.25)
+        }
     }
 }
 
 extension EyeExerciseViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/1.3, height: collectionView.frame.width/2)
+        print("DELEGATE \(collectionView.frame.height)")
+        return CGSize(width: collectionView.frame.width, height: view.frame.height * 0.25)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel?.goToDetail()
+        
+        switch indexPath.row {
+        case 0:
+            viewModel?.goToExercise(type: .relax)
+        case 1:
+            viewModel?.goToExercise(type: .bliz)
+        case 2:
+            viewModel?.goToExercise(type: .daln)
+        default:
+            viewModel?.goToExercise(type: .relax)
+
+            
+        }
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ExerciseCell
-        cell.data2 = self.data[indexPath.item]
+        cell.data1 = self.data[indexPath.item]
+        cell.configureExercise(name: data[indexPath.row].name, description: data[indexPath.row].description, image: data[indexPath.row].image)
+        
         return cell
     }
+}
+
+public enum ExerciseMethod {
+    case relax
+    case bliz
+    case daln
 }

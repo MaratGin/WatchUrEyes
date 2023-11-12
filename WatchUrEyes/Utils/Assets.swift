@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVKit
 
 public enum Asset {
     internal static let golovinTable = UIImage(named: "Golovin")
@@ -14,11 +15,46 @@ public enum Asset {
     internal static let amslerTable = UIImage(named: "Amsler")
     internal static let amslerGood = UIImage(named: "amslerGood")
     internal static let amslerBad = UIImage(named: "amslerBad")
+    internal static let bliz = UIImage(named: "bliz")
+    internal static let daln = UIImage(named: "daln")
+    internal static let relax = UIImage(named: "relax")
+
+}
+//Bundle.main.path(forResource: "relaxExercise1", ofType: "mp4", inDirectory: "Videos")!
+public enum VideoAssets {
+    
+    internal static let relaxExercises = [
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise1", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise2", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise3", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise4", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise5", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "relaxExercise6", ofType: "mp4")!) as URL))
+    ]
+    
+    internal static let blizExercises = [
+    
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz1", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz2", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz3", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz4", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz5", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz6", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bliz7", ofType: "mp4")!) as URL)),
+    ]
+    internal static let dalnExercises = [
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln1", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln2", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln3", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln4", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln5", ofType: "mp4")!) as URL)),
+        ExerciseModel(description: "Description", video: AVPlayer(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "daln6", ofType: "mp4")!) as URL)),
+    ]
 }
 
 public enum TextAsset {
-    internal static let sivcevDescription = "    Таблица Сивцева представляет собой таблицу из 12 рядов, состоящий из букв русского алфавита, вам необходимо называть ту букву, которая будет указана на экране!\n  Выполнить проверку можно в 2 режимах - классический и экспресс. В классическом режиме вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние 5 метров, Затем произнести  «Запуск», после чего проверка начнется. \n  Экспресс режим предназначен, если у вас не имеется возможности встать на дистанцию 5 метров. Вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние не менее 1,5 метров, произнести  «Запуск» и проверка начнется. Пожалуйста, не меняйте свое местоположение во время проверки. \n  Экспресс режим более неточен, поэтому не рекомендуется доверять полученным результатам!"
-    internal static let golovinDescription = "    Таблица Головина представляет собой таблицу из 12 рядов, состоящий из комбинации четырех разных колец с разрывом в определённом месте, вам необходимо сказать, в какой стороне находится разрыв.\n  Выполнить проверку можно в 2 режимах - классический и экспресс. В классическом режиме вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние 5 метров, Затем произнести  «Запуск», после чего проверка начнется. \n  Экспресс режим предназначен, если у вас не имеется возможности встать на дистанцию 5 метров. Вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние не менее 1,5 метров, произнести  «Запуск» и проверка начнется. Пожалуйста, не меняйте свое местоположение во время проверки. \n  Экспресс режим более неточен, поэтому не рекомендуется доверять полученным результатам!"
+    internal static let sivcevDescription = "    Таблица Сивцева представляет собой таблицу из 12 рядов, состоящий из букв русского алфавита, вам необходимо называть ту букву, которая будет указана на экране!\n  Выполнить проверку можно в 2 режимах - классический и экспресс. Вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние 5 метров. Вы можете допустить максимум 1 ошибку в первых 6 рядах, а также до двух ошибок в оставшихся"
+    internal static let golovinDescription = "    Таблица Головина представляет собой таблицу из 12 рядов, состоящий из комбинации четырех разных колец с разрывом в определённом месте, вам необходимо сказать, в какой стороне находится разрыв.\n  Выполнить проверку можно в 2 режимах - классический и экспресс. В классическом режиме вам необходимо поставить смартфон на уровне ваших глаз и отойти на расстояние 5 метров. Чтобы не допустить ошибок системы распознавания следует говорить - влево/вправо/вверх/вниз. Вы можете допустить максимум 1 ошибку в первых 6 рядах, а также до двух ошибок в оставшихся"
     internal static let amslerDescription = "    Таблица (решетка) Амслера представляет собой решетку, поделенную на маленькие квадратики. В центре сетки расположена черная точка. Чтобы провести тестирование, необходимо: \n1) Наденьте очки или контактные линзы (если вы их обычно носите). \n2)  Расположите сетку перед собой на расстоянии 20-30 см.\n3) Прикройте 1 глаз, сосредоточив взгляд на центральной точке, оцените остальную часть сетки. \n4) Повторите тест для другого глаза. \nВ норме при выполнении теста Амслера видимое изображение должно быть одинаково на обоих глазах, линии должны быть ровные, без искажений. При обнаружении изменений - обратитесь к врачу-офтальмологу, т. к. это может свидетельствовать о патологических процессах в центральных отделах сетчатки (макулодистрофии)."
     
     internal static let bestVision = "Острота 1.0 Соответствует нормальному зрению без каких-либо отклонений."
@@ -127,7 +163,7 @@ public enum TextAsset {
     ]
     
     internal static let golovinRow2 = [
-        ("вправо", UIImage(named: "left")!),
+        ("вправо", UIImage(named: "right")!),
         ("вниз", UIImage(named: "down")!),
         ("влево", UIImage(named: "left")!)
     ]
